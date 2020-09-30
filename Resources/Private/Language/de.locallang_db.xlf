@@ -680,6 +680,14 @@
 				<source>Sender Email (For Confirmation Mail to User)</source>
 				<target state="translated">E-Mail Adresse des Absenders (Bestätigungs E-Mail an Besucher)</target>
 			</trans-unit>
+			<trans-unit id="flexform.sender.replyToEmail">
+				<source>ReplyTo Email (For Confirmation Mail to User)</source>
+				<target state="translated">Antwort E-Mail Adresse (Bestätigungs E-Mail an Besucher)</target>
+			</trans-unit>
+			<trans-unit id="flexform.sender.replyToName">
+				<source>ReplyTo Name (For Confirmation Mail to User)</source>
+				<target state="translated">Antwort Name (Bestätigungs E-Mail an Besucher)</target>
+			</trans-unit>
 			<trans-unit id="flexform.sender.name">
 				<source>Sender Name (For Confirmation Mail to User)</source>
 				<target state="translated">Name des Absender (Bestätigungs E-Mail an Besucher)</target>

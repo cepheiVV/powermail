@@ -92,4 +92,30 @@ class SenderMailPropertiesService
         $this->signalDispatch(__CLASS__, __FUNCTION__, $signalArguments);
         return $senderName;
     }
+
+    /**
+     * @return string
+     */
+    public function getReplyToEmail(): string
+    {
+        $replyToEmail = $this->settings['sender']['default']['replyToEmail'];
+        if (!$replyToEmail) {
+            $replyToEmail = $this->getSenderEmail();
+        }
+
+        return $replyToEmail;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReplyToName(): string
+    {
+        $replyToEmail = $this->settings['sender']['default']['replyToName'];
+        if (!$replyToEmail) {
+            $replyToEmail = $this->getSenderEmail();
+        }
+
+        return $replyToEmail;
+    }
 }

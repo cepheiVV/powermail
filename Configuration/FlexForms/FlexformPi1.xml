@@ -286,6 +286,26 @@
 							</config>
 						</TCEforms>
 					</settings.flexform.sender.subject>
+					<settings.flexform.sender.default.replyToName>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:powermail/Resources/Private/Language/locallang_db.xlf:flexform.sender.replyToName</label>
+							<config>
+								<type>input</type>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.flexform.sender.default.replyToName>
+					<settings.flexform.sender.default.replyToEmail>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:powermail/Resources/Private/Language/locallang_db.xlf:flexform.sender.replyToEmail</label>
+							<config>
+								<type>input</type>
+								<eval>trim,In2code\Powermail\Tca\EvaluateEmail</eval>
+							</config>
+						</TCEforms>
+					</settings.flexform.sender.default.replyToEmail>
 					<settings.flexform.sender.body>
 						<TCEforms>
 							<exclude>1</exclude>
