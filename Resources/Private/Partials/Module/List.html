@@ -108,14 +108,33 @@
 							<f:format.date format="{f:translate(key:'datepicker_format_time')}">{mail.crdate}</f:format.date>
 						</td>
 						<td nowrap="nowrap">
-							<span title="{mail.senderName}">
-								<f:format.crop maxCharacters="50" append="&nbsp;[...]">{mail.senderName}</f:format.crop>
-							</span>
+                            <f:if condition="{settings.list.displaySubmittedReceiverNameAndEmail}">
+                                <f:then>
+                                    <span>
+                                        <f:render section="MailValue" arguments="{mail: mail, property: 'Name'}" />
+                                        <f:render section="MailValue" arguments="{mail: mail, property: 'Vorname'}" />
+                                    </span>
+                                </f:then>
+                                <f:else>
+                                    <span title="{mail.senderName}">
+                                        <f:format.crop maxCharacters="50" append="&nbsp;[...]">{mail.senderName}</f:format.crop>
+                                    </span>
+                                </f:else>
+                            </f:if>
 						</td>
 						<td nowrap="nowrap">
-							<span title="{mail.senderMail}">
-								<f:format.crop maxCharacters="50" append="&nbsp;[...]">{mail.senderMail}</f:format.crop>
-							</span>
+                            <f:if condition="{settings.list.displaySubmittedReceiverNameAndEmail}">
+                                <f:then>
+                                    <span>
+                                        <f:render section="MailValue" arguments="{mail: mail, property: 'E-Mail'}" />
+                                    </span>
+                                </f:then>
+                                <f:else>
+                                    <span title="{mail.senderMail}">
+                                        <f:format.crop maxCharacters="50" append="&nbsp;[...]">{mail.senderMail}</f:format.crop>
+                                    </span>
+                                </f:else>
+                            </f:if>
 						</td>
 						<td nowrap="nowrap">
 							<span title="{mail.subject}">
@@ -328,3 +347,11 @@
 		</table>
 	</div>
 </div>
+
+<f:section name="MailValue">
+    <f:for each="{mail.answers}" as="answer">
+        <f:if condition="{answer.field.title} == {property}">
+            {answer.value}
+        </f:if>
+    </f:for>
+</f:section>
